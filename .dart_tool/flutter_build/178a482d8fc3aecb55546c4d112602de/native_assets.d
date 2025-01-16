@@ -1,0 +1,1 @@
+ D:\\projet\ capital\\Etudes\\kotanga\\.dart_tool\\flutter_build\\178a482d8fc3aecb55546c4d112602de\\native_assets.yaml: 
