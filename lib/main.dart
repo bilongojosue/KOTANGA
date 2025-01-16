@@ -1,61 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:kotanga/pages/pgbranches.dart';
+import 'package:kotanga/pages/pgchoixclasse.dart';
+import 'package:kotanga/pages/pgchoixdegre.dart';
+import 'package:kotanga/pages/pgchoixniveau.dart';
+import 'package:kotanga/pages/pgexercice.dart';
+import 'package:kotanga/pages/pglecons.dart';
+import 'package:kotanga/pages/pgmultimedia.dart';
+import 'pages/pgconnexion.dart';
 
 void main() {
-  runApp(MyApp());
+  
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+      '/': (context) => MyHomePage(),
+      '/pgbranches': (context)=> Pgbranches(),
+      '/pgchoixclasses': (context)=> Pgchoixclasse(),
+      '/pgchoixdegre': (context)=> Pgchoixdegre(),
+      '/pgchoixniveau': (context)=> Pgchoixniveau(),
+      '/pgexercices': (context)=> Pgexercice(),
+      '/pglecons': (context)=> Pglecons(),
+      '/pgmultimedia': (context)=> Pgmultimedia()
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter Demo Home Page'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
-    );
-  }
-}
